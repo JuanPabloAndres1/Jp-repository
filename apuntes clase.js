@@ -235,5 +235,4 @@ let cantidadIngredientes= window.prompt("Dime la cantidad de Ingredientes a usar
 for(let i = 0 ; i < cantidadIngredientes ; i++){
     let nombreIngredientes= window.prompt("Nombre del Ingrediente")
     console.log(nombreIngredientes)
-   
-function saludar)) )
+    }
