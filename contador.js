@@ -18,11 +18,7 @@ function disminuirContador() {
 incrementarButton.addEventListener("click", incrementarContador);
 resetearButton.addEventListener("click", resetearContador);
 disminuirButton.addEventListener("click", disminuirContador);
+
 document.getElementById("miBoton").addEventListener("click", function() {
-    prompt ("Te gustaria saber mas de este BMW? 1. Si  2. No");
-    if (window.prompt = "Si" + "si" + "1") {
-        window.alert("Es el mejor de todos")
-    } else {
-        window.alert("Gracias por preguntar")
-    }
-  });
+    alert ("Llamanos al 31111111");
+     });
