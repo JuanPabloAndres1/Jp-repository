@@ -13,16 +13,16 @@
 
 <body>
     <Header>
-        <Section>
+        <Article>
             <img src="580b57fcd9996e24bc43c46e.png" alt="BMW Logo">
-        </Section>
-        <Section>
+        </Article>
+        <Article>
             <nav class="navbar">
                 <a href="#Historia">Historia</a>
                 <a href="#Especificaciones">Especificaciones</a>
                 <a href="#Mas Fotos">Mas Fotos</a>
             </nav>
-        </Section>
+        </Article>
     </Header>
     <main>
         <h1>Contador:</h1>
@@ -34,12 +34,22 @@
         <aside>
             <h1 text-align="right" class="titulo"> BMW M5 E60</h1>
         </aside>
-
-<footer>
-    <button id="miBoton" class="floating-button">Chat</button> 
-</footer>
+        <article id="ventanaEmergente" class="ventana-emergente">
+            <section class="contenido">
+                <span class="cerrar" id="cerrarVentana">&times;</span>
+                <h2 class="cabecera-chat">Chat Interactivo</h2>
+                <section class="cuerpo-chat"></section>
+            </section>
+            <section class="pie-chat">
+                <input type="text" id="mensaje" placeholder="Escribe un mensaje...">
+                <button id="enviarMensaje" class="boton-chat">Enviar</button>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <button id="mostrarChat" class="floating-button">Chat</button>
+    </footer>
     <script src="contador.js"></script>
-
 </body>
 
 

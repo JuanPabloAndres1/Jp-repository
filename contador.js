@@ -19,6 +19,38 @@ incrementarButton.addEventListener("click", incrementarContador);
 resetearButton.addEventListener("click", resetearContador);
 disminuirButton.addEventListener("click", disminuirContador);
 
-document.getElementById("miBoton").addEventListener("click", function() {
-    alert ("Llamanos al 31111111");
-     });
+const mostrarChat1 = document.getElementById('mostrarChat');
+const enviarMensajeBtn = document.getElementById('enviarMensaje');
+const mensajeInput = document.getElementById('mensaje');
+const cuerpoChat = document.querySelector('.cuerpo-chat');
+const ventanaEmergente = document.getElementById('ventanaEmergente');
+const cerrarVentanaBtn = document.getElementById('cerrarVentana');
+
+let ventanaVisible = false; // Variable para controlar si la ventana está abierta o cerrada
+
+mostrarChat1.addEventListener('click', () => {
+    if (!ventanaVisible) {
+        ventanaEmergente.style.display = 'block';
+        ventanaVisible = true;
+    } else {
+        ventanaEmergente.style.display = 'none';
+        ventanaVisible = false;
+    }
+});
+
+function enviarMensaje() {
+    const mensaje = mensajeInput.value;
+    if (mensaje.trim() !== '') {
+        const nuevoMensaje = document.createElement('p');
+        nuevoMensaje.textContent = mensaje;
+        cuerpoChat.appendChild(nuevoMensaje);
+        mensajeInput.value = '';
+    }
+}
+enviarMensajeBtn.addEventListener('click', enviarMensaje);
+
+cerrarVentanaBtn.addEventListener('click', () => {
+    ventanaEmergente.style.display = 'none';
+    ventanaVisible = false;
+});
+

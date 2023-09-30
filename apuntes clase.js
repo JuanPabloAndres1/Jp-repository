@@ -235,4 +235,77 @@ let cantidadIngredientes= window.prompt("Dime la cantidad de Ingredientes a usar
 for(let i = 0 ; i < cantidadIngredientes ; i++){
     let nombreIngredientes= window.prompt("Nombre del Ingrediente")
     console.log(nombreIngredientes)
-    }
+    
+}
+// Selectores 
+let sectionById = window.document.getElementById("main_section_id")
+let sectionByClassName = window.document.getElementsByClassName("main_section_class")
+let sectionByTag = window.document.getElementsByTagName("section")
+let sectionByName = window.document.getElementsByName("main_section_name")
+
+// Avanzado - Query selector
+sectionById = document.querySelector("#main_section_id")
+sectionByClassName = document.querySelector(".main_section_class")
+sectionByTag = document.querySelector("section")
+
+let allSections = document.querySelectorAll("section")
+
+// Acceder a los nodos cercanos
+// Padre
+let mainNode = sectionById.parentNode
+// Hijos
+let childNode = sectionById.firstChild
+let secondChild = sectionById.lastChild
+let allChildrens = sectionById.childNodes
+// Hermanos
+let sibling = mainNode.nextElementSibling
+
+// Manipular el DOM tree
+let nuevoArticle = document.createElement("article")
+nuevoArticle.textContent = "Este article lo cree en javascript"
+
+let aTag = document.createElement("a")
+aTag.textContent = "Enlace de ejemplo"
+
+sectionById.appendChild(nuevoArticle)
+sectionById.appendChild(aTag)
+
+//sectionById.replaceChild(aTag, nuevoArticle)
+
+//mainNode.removeChild(sectionById)
+
+// Cambiar estilos
+sectionById.className = "clase_temporal"
+//sectionById.classList.add("clase_temporal")
+//sectionById.classList.remove("clase_temporal")
+//sectionById.classList.replace("main_section_class", "otra")
+
+
+// Eventos
+function sayHello(e) {
+    console.log(e.target)
+    console.log("Hola!")
+}
+
+let button = window.document.querySelector("#say_hello_button") 
+button.addEventListener("click", sayHello)
+
+// Tareas
+let todoContainer = window.document.querySelector("#todo_container_id") 
+let buttonAddTask = window.document.querySelector("#todo_button_add_task") 
+let taskList = window.document.querySelector("#todo_ul_id") 
+let inputText = window.document.querySelector("#input_text_task_id") 
+
+function deleteTask(e) {
+    taskList.removeChild(e.target)
+}
+
+function addTask(event) {
+    console.log(event)
+
+    let listElement = window.document.createElement("li")
+    listElement.innerHTML = inputText.value
+    listElement.addEventListener("click", deleteTask)
+
+    taskList.appendChild(listElement)
+}

@@ -2,7 +2,7 @@ header {
     background-color: rgb(0, 0, 0);
     height: 11vh;
     padding: 1vw;
-    }
+}
 
 img {
 
@@ -37,7 +37,7 @@ main {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 210vh 120vh;
-    height: 95vh;
+    height: 84vh;
     position: relative;
 }
 
@@ -59,26 +59,27 @@ main {
 
     background-image: url(1600761.jpg);
     background-size: 100% 100%;
+    size: 100%;
 
 }
+
 .floating-button {
     position: fixed;
-  bottom: 30px; 
-  right: 30px; 
-  width: 80px; 
-  height: 80px; 
-  background-color: #007bff;
-  color: #fff; 
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 18px;
-  }
+    bottom: 30px;
+    right: 30px;
+    width: 80px;
+    height: 80px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+}
 
 body {
     font-family: Arial, sans-serif;
@@ -93,17 +94,88 @@ h1 {
 }
 
 p {
-    font-size: 48px;
-    color: red;
+    font-size: 28px;
+    color: rgb(5, 5, 5);
 }
 
 button {
-    font-size: 22px;
+    font-size: 16px;
     padding: 10px 20px;
     margin: 10px;
     color: rgb(0, 255, 166);
-    border: 5px;
+    border: 2px solid rgb(0, 255, 166);
     border-radius: 5px;
     background-color: #007bff;
+
+}
+
+
+.contenido {
+    position: fixed;
+    background-color: white;
+    padding: 2px;
+    top: 280px;
+    width: 450px;
+    right: 80px;
+    height: 50%;
+    border-radius: 5px;
+    text-align: left;
+}
+.cabecera-chat {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.cuerpo-chat {
+    position: fixed;
+    padding: 1px;
+    max-height: 300px;
+    overflow-y: auto;
+    top: 350px;
+      
+
+
+ }
+ .pie-chat {
+    position: fixed;
+    display: flex;
+    padding: 10px;
+    top: 630px;
+    right: 95px;
+    width: 20%;
+    height: 7%;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    padding: 5px;
+}
+
+/* Estilo del botón para cerrar la ventana emergente */
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.ventana-emergente {
+    width: 25%; /* Ancho del contenedor */
+    margin: 0 auto; /* Centrar el contenedor horizontalmente */
+    padding: 2px; /* Espaciado interior del contenedor */
+    position: fixed;
+    top: 280px;
+    right: 50px;
     
+    height: 50%;
+}
+section {
+    margin-bottom: 20px; /* Espacio entre secciones */
+    padding: 10px; /* Espaciado interior de las secciones */
+    background-color: #fff; /* Color de fondo de las secciones */
+    border: 1px solid #ddd; /* Borde de las secciones */
+    border-radius: 5px; /* Bordes redondeados de las secciones */
 }
