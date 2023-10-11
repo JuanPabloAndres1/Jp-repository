@@ -1,17 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
 header {
     background-color: rgb(0, 0, 0);
-    height: 11vh;
-    padding: 1vw;
+    height: 125px;
+    padding: 10px;
 }
 
 img {
 
-    width: 5.5%;
-    height: 5.5%;
+    width: 5%;
+    height: 5%;
     background-size: cover;
     background-repeat: no-repeat;
     position: relative;
     right: 880px;
+    top: 0px;
 
 }
 
@@ -37,8 +45,9 @@ main {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 210vh 120vh;
-    height: 84vh;
-    position: relative;
+    height: 90vh;
+    width: auto;
+    
 }
 
 .titulo {
@@ -55,21 +64,13 @@ main {
 
 }
 
-main {
-
-    background-image: url(1600761.jpg);
-    background-size: 100% 100%;
-    size: 100%;
-
-}
-
 .floating-button {
     position: fixed;
-    bottom: 30px;
+    bottom: 10px;
     right: 30px;
     width: 80px;
     height: 80px;
-    background-color: #007bff;
+    background-color:rgb(36, 33, 33);
     color: #fff;
     border: none;
     border-radius: 50%;
@@ -83,7 +84,7 @@ main {
 
 body {
     font-family: Arial, sans-serif;
-    text-align: center;
+    
 }
 
 h1 {
@@ -93,89 +94,132 @@ h1 {
     margin: 0vh;
 }
 
-p {
-    font-size: 28px;
-    color: rgb(5, 5, 5);
-}
-
-button {
+.boton_contador {
     font-size: 16px;
     padding: 10px 20px;
     margin: 10px;
     color: rgb(0, 255, 166);
     border: 2px solid rgb(0, 255, 166);
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #464b50;
 
 }
 
 
-.contenido {
+.ventana-emergente {
     position: fixed;
-    background-color: white;
-    padding: 2px;
-    top: 280px;
-    width: 450px;
-    right: 80px;
-    height: 50%;
-    border-radius: 5px;
-    text-align: left;
+    width: 400px;
+    height: 400px;
+    bottom: 120px;
+    right: 50px;
+    background-color: rgb(36, 33, 33);
+    display: none;
+    grid-template-rows: 10% 80% 10%;
+    border-radius: 10px;
+    
 }
-.cabecera-chat {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
+
+.ventana-emergente-header {
+    width: 100%;
+    height: 10%;
+    background-color: rgb(83, 83, 76);
+    padding-left: 20px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    color: rgb(255, 255, 255);
+    font-size: 24px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.ventana-emergente-message-text {
+    background-color: rgb(129, 122, 122);
+    padding: 10px 15px;
+    display: flex;
+    position: absolute;
+    top: 385px;
+    width: 100%;
+    justify-content: space-between;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 .cuerpo-chat {
-    position: fixed;
-    padding: 1px;
-    max-height: 300px;
-    overflow-y: auto;
-    top: 350px;
-      
-
-
- }
- .pie-chat {
-    position: fixed;
-    display: flex;
     padding: 10px;
-    top: 630px;
-    right: 95px;
-    width: 20%;
-    height: 7%;
+    overflow-y: auto;
+    width: 100%;
+    max-height: 345px;
+    margin-right: 20px;
+    background-color: rgb(36, 33, 33);
+    display: flex;
+    flex-direction: column;
+
+    
+    
 }
 
 input[type="text"] {
     flex-grow: 1;
     padding: 5px;
+    color: #fff;
 }
 
-/* Estilo del botón para cerrar la ventana emergente */
 .cerrar {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 20px;
+    top: 5px;
+    right: 5px;
+    font-size: 40px;
     cursor: pointer;
 }
-.ventana-emergente {
-    width: 25%; /* Ancho del contenedor */
-    margin: 0 auto; /* Centrar el contenedor horizontalmente */
-    padding: 2px; /* Espaciado interior del contenedor */
-    position: fixed;
-    top: 280px;
-    right: 50px;
+
+.message-text-input {
+    width: 80%;
+
+}
+
+h7 {
+    font-size: 12px;
+    color: #1b1818;
+    text-align: end;
+    background-color: #bebcbc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
     
-    height: 50%;
+    
 }
-section {
-    margin-bottom: 20px; /* Espacio entre secciones */
-    padding: 10px; /* Espaciado interior de las secciones */
-    background-color: #fff; /* Color de fondo de las secciones */
-    border: 1px solid #ddd; /* Borde de las secciones */
-    border-radius: 5px; /* Bordes redondeados de las secciones */
+h6{
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    text-align: start;
+    background-color: #1f1b1b;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+   
 }
+.pregunta-inicial {
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    text-align: justify;
+    
+}
+.mensaje_chat {
+    font-size: 18px;
+    color: rgb(24, 23, 23);
+    text-align: end;
+    
+}
+.opciones_chat {
+    font-size: 14px;
+    color: #fff;
+    display: flex;
+    text-align: start;
+    background-color: #1f1b1b;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+}
+

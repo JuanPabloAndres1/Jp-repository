@@ -27,29 +27,47 @@
     <main>
         <h1>Contador:</h1>
         <p id="contador">0</p>
-        <button id="incrementar">Incrementar</button>
-        <button id="resetear">Resetear</button>
-        <button id="disminuir">disminuir</button>
+        <button id="incrementar" class="boton_contador">Incrementar</button>
+        <button id="resetear" class="boton_contador">Resetear</button>
+        <button id="disminuir" class="boton_contador">disminuir</button>
 
         <aside>
             <h1 text-align="right" class="titulo"> BMW M5 E60</h1>
         </aside>
         <article id="ventanaEmergente" class="ventana-emergente">
-            <section class="contenido">
+            <header class="ventana-emergente-header">
+                Chat
                 <span class="cerrar" id="cerrarVentana">&times;</span>
-                <h2 class="cabecera-chat">Chat Interactivo</h2>
-                <section class="cuerpo-chat"></section>
+            </header>
+            <section class="cuerpo-chat">
+                <h5 class="pregunta-inicial">Como estas? Si has llegado a nuestro chat, puedo entender que te gustaria
+                    saber la ubicacion de los sitios que mostramos en nuestra
+                    pagina web. A continuacion te daremos una lista y solo tendras que escribir el numero del que desees:
+
+                </h5>
+                <h4 class="opciones_chat">1. Caño Cristales
+                </h4>
+                <h4 class="opciones_chat">2. Piedra Peñol
+                </h4 >
+                <h4 class="opciones_chat">3. Monserrate</h4>
+                
             </section>
-            <section class="pie-chat">
-                <input type="text" id="mensaje" placeholder="Escribe un mensaje...">
-                <button id="enviarMensaje" class="boton-chat">Enviar</button>
+            <section class="ventana-emergente-message-text">
+                <input id="mensaje" class="message-text-input" placeholder="Escribe un mensaje...">
+                </input>
+                <button id="enviarMensaje">
+                    Enviar
+                </button>
             </section>
+        </article>
+
         </article>
     </main>
     <footer>
         <button id="mostrarChat" class="floating-button">Chat</button>
     </footer>
-    <script src="contador.js"></script>
+     <script src="contador.js"></script> 
+    <!---<script src="ejercicio_libro.js"> </script> !--->
 </body>
 
 

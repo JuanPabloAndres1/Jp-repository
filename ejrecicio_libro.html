@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ejercicio_libro.css">
+    <title>Mi Biblioteca</title>
+</head>
+<body>
+    <section class="libro">
+        <h2>Libro 1</h2>
+        <p><strong>Título:</strong> <span id="titulo1">El Gran Gatsby</span></p>
+        <p><strong>Autor:</strong> <span id="autor1">F. Scott Fitzgerald</span></p>
+        <p><strong>Género:</strong> <span id="genero1">Novela</span></p>
+        <p><strong>Leído:</strong> <span id="leido1">No</span></p>
+        <button onclick="marcarComoLeido(1)">Marcar como Leído</button>
+        <button onclick="marcarComoNoLeido(1)">Marcar como No Leído</button>
+    </section>
+
+    <section class="libro">
+        <h2>Libro 2</h2>
+        <p><strong>Título:</strong> <span id="titulo2">Cien Años de Soledad</span></p>
+        <p><strong>Autor:</strong> <span id="autor2">Gabriel García Márquez</span></p>
+        <p><strong>Género:</strong> <span id="genero2">Realismo mágico</span></p>
+        <p><strong>Leído:</strong> <span id="leido2">No</span></p>
+        <button onclick="marcarComoLeido(2)">Marcar como Leído</button>
+        <button onclick="marcarComoNoLeido(2)">Marcar como No Leído</button>
+    </section>
+
+    <script src="ejercicio_libro.js"></script>
+</body>
+</html>
