@@ -1,0 +1,128 @@
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb+srv://JuanPabloAndres:@miprimerabase.jxratfg.mongodb.net/
+Please enter a MongoDB connection string (Default: mongodb://localhost/): mongodb+srv://JuanPabloAndres:@miprimerabase.jxratfg.mongodb.net/
+Enter password: ****************
+Current Mongosh Log ID: 65289b36a73846ff3be9b820
+Connecting to:          mongodb+srv://<credentials>@miprimerabase.jxratfg.mongodb.net/?appName=mongosh+2.0.1
+Using MongoDB:          6.0.11
+Using Mongosh:          2.0.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+Atlas atlas-2msg24-shard-0 [primary] test>
+
+Atlas atlas-2msg24-shard-0 [primary] test>
+
+Atlas atlas-2msg24-shard-0 [primary] test> use Nueva_base
+switched to db Nueva_base
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> show collections
+
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.createCollection ("personas", {})
+{ ok: 1 }
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.insertMany ([{nombre:"Juan", edad: 30, ciudad: "Bogota"}, {nombre:"Pedro", edad: 20, ciudad: "Manizales"}, {nombre:"Camilo", edad: 27, ciudad: "Cali"}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6528a140a73846ff3be9b821"),
+    '1': ObjectId("6528a140a73846ff3be9b822"),
+    '2': ObjectId("6528a140a73846ff3be9b823")
+  }
+}
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.find({})
+[
+  {
+    _id: ObjectId("6528a140a73846ff3be9b821"),
+    nombre: 'Juan',
+    edad: 30,
+    ciudad: 'Bogota'
+  },
+  {
+    _id: ObjectId("6528a140a73846ff3be9b822"),
+    nombre: 'Pedro',
+    edad: 20,
+    ciudad: 'Manizales'
+  },
+  {
+    _id: ObjectId("6528a140a73846ff3be9b823"),
+    nombre: 'Camilo',
+    edad: 27,
+    ciudad: 'Cali'
+  }
+]
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.find({edad > 25})
+Uncaught:
+SyntaxError: Unexpected token, expected "," (1:23)
+
+> 1 | db.personas.find({edad > 25})
+    |                        ^
+  2 |
+
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.find({edad:{$gt:25}})
+[
+  {
+    _id: ObjectId("6528a140a73846ff3be9b821"),
+    nombre: 'Juan',
+    edad: 30,
+    ciudad: 'Bogota'
+  },
+  {
+    _id: ObjectId("6528a140a73846ff3be9b823"),
+    nombre: 'Camilo',
+    edad: 27,
+    ciudad: 'Cali'
+  }
+]
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.find({edad:{$gte:30}})
+[
+  {
+    _id: ObjectId("6528a140a73846ff3be9b821"),
+    nombre: 'Juan',
+    edad: 30,
+    ciudad: 'Bogota'
+  }
+]
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.find({edad:{$lt:25}})
+[
+  {
+    _id: ObjectId("6528a140a73846ff3be9b822"),
+    nombre: 'Pedro',
+    edad: 20,
+    ciudad: 'Manizales'
+  }
+]
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.find({name:{$eq:"Juan"}})
+
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.find({nombre:{$eq:"Juan"}})
+[
+  {
+    _id: ObjectId("6528a140a73846ff3be9b821"),
+    nombre: 'Juan',
+    edad: 30,
+    ciudad: 'Bogota'
+  }
+]
+
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.find({edad:{$gt:25,$lt:31}})
+[
+  {
+    _id: ObjectId("6528a140a73846ff3be9b821"),
+    nombre: 'Juan',
+    edad: 30,
+    ciudad: 'Bogota'
+  },
+  {
+    _id: ObjectId("6528a140a73846ff3be9b823"),
+    nombre: 'Camilo',
+    edad: 27,
+    ciudad: 'Cali'
+  }
+]
+
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base> db.personas.updateMany({edad:{$gt:25,$lt:31}, ciudad:{$eq:"Cali"}}, {$set:{ciudad:"Los Anegeles"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+Atlas atlas-2msg24-shard-0 [primary] Nueva_base>
